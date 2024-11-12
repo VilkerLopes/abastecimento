@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registrar.css">
+    <title>Registrar Abastecimento</title>
+</head>
+<body>
+    <fieldset id="caixa">
+    <form method="POST" id="abastecimentoform">
+        <div class="colunas">
+        <div class="coluna1">
+            <label for="kilometrageminicial">Kilometragem Inicial</label>
+            <br>
+            <input type="text" name="kilometrageminicial" id="kilometrageminicial" required>
+            <br><br>
+            <label for="totalabastecido">Total Abastecido(L)</label>
+            <br>
+            <input type="text" name="totalabastecido" id="totalabastecido" required>
+            <br><br>
+            <label for="tipocombustivel">Tipo de Combustível</label>
+            <br>
+            <input type="text" name="tipocombustivel" id="tipocombustivel" required>
+            <br><br>
+            <label for="cidadepartida">Cidade de  Partida</label>
+            <br>
+            <input type="text" name="cidadepartida" id="cidadepartida" required>
+            <br><br>
+            <label for="motorista">Motorista</label>
+            <br>
+            <select type="text" name="motorista" id="motorista" required>
+                <option>Selecione um motorista</option>
+            </select>
+            <br><br>
+            <label for="comentario">Comentário</label>
+            <br>
+            <input type="text" name="comentario" id="comentario">
+            <br><br>
+        </div>
+        <div class="coluna2">
+            <label for="kilometragem">Kilometragem final</label>
+            <br>
+            <input type="text" name="kilometragemfinal" id="kilometragemfinal" required>
+            <br><br>
+            <label for="posto">Posto</label>
+            <br>
+            <select type="text" name="posto" id="posto" required>
+                <option>Selecione um posto</option>
+            </select>
+            <br><br>
+            <label for="veiculo">Veículos</label>
+            <br>
+            <select type="text" name="veiculo" id="veiculo" required>
+                <option value="">Selecione um veiculo</option>
+            </select>
+            <br><br>
+            <label for="cidadeatual">Cidade Atual</label>
+            <br>
+            <input type="text" name="cidadeatual" id="cidadeatual" required>
+            <br><br>
+            <label for="passageiro">Passageiro</label>
+            <br>
+            <select type="text" name="passageiro" id="passageiro">
+                <option>Selecione um Passageiro</option>
+            </select>
+            <br><br>
+            <label for="totalgasto">Total Gasto(R$)</label>
+            <br>
+            <input type="text" name="totalgasto" id="totalgasto" required>
+            <br><br>
+            </div>
+        </div>
+        </div>
+        <div class="gasto">
+            
+        </div>
+        <div id="datar">
+            <label for="dia">Dia:</label>
+            
+            <input id="dia" name="dia" type="number" required>
+            
+            <label for="mes">Mês:</label>
+            
+            <input type="number" id="mes" name="mes" required>
+            
+            <label for="ano">Ano:</label>
+            
+            <input type="number" id="ano" name="ano" required>
+            <br><br>
+        </div>
+
+        
+        <div class="comprovante">
+            <input type="submit" value="Registrar" id="submit" name="cadastrar">
+        </div>
+    </form>
+    </fieldset>
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">☰</button>
+        <h1 class="menu-title">Menu</h1>
+        <hr>
+        <ul class="menu">
+            <li><a href="login.html">Sair</a></li>
+        </ul>
+    </div>
+    <script src="registrar.js"></script>
+    <script src="opcaoveiculo.js"></script>
+    <script src="opcaoposto.js"></script>
+    <script src="opcaomotorista.js"></script>
+    <script src="opcaopassageiro.js"></script>
+    
+</body>
+</html>

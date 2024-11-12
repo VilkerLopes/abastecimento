@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(teladefundo.jpeg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #FF5C00;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Estado maximizado */
+.sidebar.minimized {
+    width: 250px;
+}
+
+/* Botão de alternância */
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 5px;
+    background-color: #FF5C00;
+    right: 5px;
+    color: black;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 24px; /* Aumenta o tamanho do ícone do botão */
+}
+
+/* Título do menu */
+.menu-title {
+    text-align: center;
+    margin: 80px 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+/* Menu da sidebar */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: opacity 0.3s;
+}
+
+.menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Menu e título ficam ocultos no estado padrão */
+.sidebar .menu {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.sidebar .menu-title {
+    opacity: 0;
+}
+
+/* Menu e título aparecem quando a sidebar está maximizada */
+.sidebar.minimized .menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar.minimized .menu-title {
+    opacity: 1;
+}
+
+/* Conteúdo ao lado da sidebar */
+.content {
+    margin-left: 60px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.sidebar.minimized + .content {
+    margin-left: 250px;
+}

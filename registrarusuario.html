@@ -1,0 +1,165 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novos Usuários</title>
+    <link rel="stylesheet" href="registrarusuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="fundo">
+    
+    <div id="caixa">
+        
+    <div class="form">
+        <h2 class="titulo">Cadastrar</h2>
+    <form id="usuarioform" method="POST">
+        <label for="">Nome</label>
+        <input type="text" name="usuario" id="nome" required>
+
+        <label for="funcao">Função</label>
+        <select id="funcao" name="funcao" required>
+            <option value="" disabled selected>Selecione a função</option>
+            <option value="admin">Administrador</option>
+            <option value="user">Usuário</option>
+        </select> 
+        <label for=""> Senha</label>
+        <input type="password" name="senha" id="senha">
+        <button type="submit" name="cadastrar">Registrar</button>
+    </div>
+</div>
+<h2 id="apagar">Editar Usuários</h2>
+</form>
+<h2 id="consultar">Consultar Usuários</h2>
+<div class="user-list">
+    <h3>Lista de Usuários</h3>
+    <ul id="user">
+     
+    </ul>
+    <button type="button" id="limpar">Limpar</button>
+    <br><br>
+    <button id="consultausuario">Consultar Dados</button>
+    <div id="resultadousuario"></div>
+
+</div>
+
+<div class="form1">
+    <form  method="POST" id="formulario">
+    <br><br>
+    <label for="">ID:</label>
+    <br>
+    <input type="text" id="novoid" name="id" readonly><br><br>
+    <label for="">Nome</label>
+    <br>
+    <input type="text" name="usuario" id="usuario">
+    <label for="">Senha</label>
+    <br>
+    <input type="password" name="senha" id="novosenha">
+    <br>
+    <label for="">Função</label>
+        <select id="novofuncao" name="funcao" required>
+            <option value="" disabled selected>Selecione a função</option>
+            <option value="admin" id="novofuncao">Administrador</option>
+            <option value="user" id="novofuncao">Usuário</option>
+        </select> 
+        <br><br>
+    <button type="submit" name="editar">Editar</button>
+    <br><br>
+</form>
+<form method="post" id="excluirform">
+    <label for="excluir">Confirmar ID para excluir:</label>
+    <input type="text" id="excluir" name="id">
+    <br>
+    <button type="submit" name="excluir">Excluir</button>
+</form>
+</div>
+</div>
+<div class="sidebar" id="sidebar">
+    <button class="toggle-btn" id="toggle-btn">☰</button>
+    <h1 class="menu-title">Menu</h1>
+    <hr>
+    <ul class="menu">
+        <li><a href="registrarusuario.html">Usuários</a></li>
+        <hr>
+        <li><a href="registrarveiculo.html">Veículos</a></li>
+        <hr>
+        <li><a href="registrarposto.html">Postos</a></li>
+        <hr>
+        <li><a href="consultarabastecimento.html">Abastecimento</a></li>
+        <hr>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</div>
+    <script src="registarusuario.js"></script>
+    </div class="fundo">
+<script>
+    document.getElementById('usuarioform').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    let formData = new FormData(this);
+
+    fetch('cadastro.php', { 
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); 
+
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+});
+</script>
+
+<script>
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    let formData = new FormData(this);
+
+    fetch('editarusuario.php', { 
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); 
+
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+});
+</script>
+
+<script>
+    document.getElementById('excluirform').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    let formData = new FormData(this);
+
+    fetch('excluirusuario.php', { 
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); 
+
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+    });
+});
+</script>
+
+  
+
+</body>
+</html>

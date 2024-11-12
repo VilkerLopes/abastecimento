@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admistrador</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <form action="login.php" method="post">
+    <div class="fundo">
+    <div class="login">
+        <form>
+        <h1>Usuário</h1>
+        <input type="text" id="texto" name="usuario" required>
+        <br>
+        <h1>Senha</h1>
+        <input type="password" id="texto" name="senha" required>
+        <br><br>
+        <label for="funcao">Função</label>
+        <select id="funcao" name="funcao" required>
+            <option value="" disabled selected>Selecione a função:</option>
+            <option value="admin">Administrador</option>
+            <option value="user">Usuário</option>
+        </select> 
+        <br><br>
+        <button type="submit" name="login" id="botao">Login</button>
+        </form>
+    </div>
+</div>
+    </form>
+</body>
+</html>

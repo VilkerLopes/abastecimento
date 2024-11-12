@@ -1,0 +1,1219 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(teladefundo.jpeg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh;
+}
+.titulo {
+    position: absolute;
+    top: 35%;
+    left: 44%;
+    transform: translate(-50%, -650%);
+    border: 2px solid black; 
+    padding: 10px; 
+    border-radius: 15px; 
+    width: 20%;
+    text-align: center;
+    font-size: 100%;
+}
+.pai-tela {
+    height: 100%;
+    width: 100%;
+    background-color: lightgray; /* Apenas para visualização */
+    font-size: 2%;
+  }
+@media (max-width: 768px) {
+    h3 {
+      font-size: 28px; /* Tamanho do título para telas menores */
+    }
+  }
+.titulo2 {
+
+    position: absolute;
+    top: 37.5%;
+    left: 80%;
+    transform: translate(-50%, -650%);
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    width: 15%;
+    text-align: center;
+    font-size: 100%;
+    min-width: 100px;
+}
+
+.excluir {
+    position: absolute;
+    right: 7%;
+    top: 60%;
+    width: 20%;
+    
+    margin-right: 3%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #FF5C00;
+}
+.excluir button {
+    position: relative;
+    width: 50%;
+    border-radius: 8px;
+    left: 21%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+#edita {
+    position: absolute;
+    left: 36.5%;
+    top: 88%;
+    width: 16%;
+    
+    margin-right: 3%;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.excluir input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    left: 7%;
+    margin-bottom: 7%;
+}
+.excluir label {
+    margin-top: 5%;
+    position: relative;
+    margin-left: 7%;
+    size: 30px;
+}
+.id {
+    position: relative;
+    width: 80%;
+    top: 80%;
+    left: 10%;
+    text-align: center;
+}
+#datar {
+    position: absolute;
+    top: 76%;
+    left: 25%;
+    width: 40%;
+
+    background-color: #FF5C00;
+    text-align: center;
+}
+#datar input{
+    width: 20%;
+    border-radius: 4px;
+}
+.colunas {
+    background-color: #FF5C00;
+    position: absolute;
+    left: 25%;
+    top: 2%;
+    width: 40%;
+    height: 92%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.coluna1{
+    position: absolute;
+    margin: 3%;
+    left: 0%;
+    top: 0%;
+    width: 35%;
+    height: 100%;
+}
+.coluna2 {
+    position: absolute;
+    margin: 3%;
+    left: 55%;
+    top: 0%;
+    width: 35%;
+    height: 100%;
+
+}
+.coluna1, .coluna2 {
+    flex: 1; 
+    min-width: 200px; 
+    
+}
+
+.coluna1 label, .coluna2 label, .id, .excluir label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.coluna1 input, .coluna2 input, .id input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.comprovante{
+    background-color: #FF5C00;
+    position: absolute;
+    left: 25%;
+    top: 60%;
+    width: 40%;
+    text-align: center;
+    }
+.comprovante label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    position: relative;
+    
+}
+
+.comprovante input{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    left: 18%;
+    position: relative;
+}
+
+.comprovante input[type="file"] {
+    padding: 0;
+    border: none;
+    background: none;
+    left: 27%;
+    
+}
+
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+#submit{
+    position: absolute;
+    background-color: black;
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+    width: 50%;
+    left: 25%;
+}
+#submit:hover{
+    background-color: rgb(26, 25, 25);
+    cursor: pointer;
+}
+hr{
+    background: black;
+    border: none;
+    height: 1px;
+    margin: 2px 0;
+}
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #FF5C00;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Estado maximizado */
+.sidebar.minimized {
+    width: 250px;
+}
+
+/* Botão de alternância */
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 5px;
+    background-color: #FF5C00;
+    right: 5px;
+    color: black;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 24px;
+}
+
+/* Título do menu */
+.menu-title {
+    text-align: center;
+    margin: 80px 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+/* Menu da sidebar */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: opacity 0.3s;
+}
+
+.menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Menu e título ficam ocultos no estado padrão */
+.sidebar .menu {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.sidebar .menu-title {
+    opacity: 0;
+}
+
+/* Menu e título aparecem quando a sidebar está maximizada */
+.sidebar.minimized .menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar.minimized .menu-title {
+    opacity: 1;
+}
+
+/* Conteúdo ao lado da sidebar */
+.content {
+    margin-left: 60px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.sidebar.minimized + .content {
+    margin-left: 250px;
+}
+
+.user-list {
+    width: 300px;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    background-color: #FF5C00;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.3);
+    font-size: large;
+    color: black;
+
+}
+
+.user-list h2 {
+    margin-top: 0;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    padding: 10px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-list li:hover {
+    background-color: #ddd;
+}
+/* Conteúdo ao lado da sidebar */
+.content {
+    margin-left: 60px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.sidebar.minimized + .content {
+    margin-left: 250px;
+}
+
+.user-list {
+    width: 300px;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    background-color: #FF5C00;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: large;
+    color: black;
+}
+
+.user-list h2 {
+    margin-top: 0;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    padding: 10px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-list li:hover {
+    background-color: #ddd;
+}
+/* O restante do seu CSS continua o mesmo */
+
+.user-list {
+    width: 300px;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    background-color: #FF5C00;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.3);
+    font-size: large;
+    color: black;
+    max-height: 300px; /* Altura máxima da lista */
+    overflow-y: auto;  /* Adiciona a barra de rolagem vertical */
+    margin-left: 260px; /* Margem da lista para não sobrepor o sidebar */
+    padding: 10px;      /* Espaçamento interno */
+    border: none /* Borda para a lista */
+}
+
+.user-list h2 {
+    margin-top: 0;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    padding: 10px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.user-list li:hover {
+    background-color: #ddd;
+}
+
+.user-list li button {
+    background-color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.apagar {
+    width: 300px;
+    position: absolute;
+    top: 15%;
+    right: 35%;
+    background-color: #FF5C00;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: large;
+    color: black;
+    max-height: 300px;
+    overflow-y: auto;  
+    margin-left: 260px; 
+    padding: 10px;
+    border: none; 
+    border-radius: 8px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#apagar {
+    position: absolute;
+    width: 190px;
+    right: 38%;
+    border: 2px solid black; 
+    padding: 10px; 
+    border-radius: 15px; 
+}
+#consultar {
+    position: absolute;
+    width: 15%;
+    right: 12%;
+    border: 2px solid black; 
+    padding: 10px; 
+    border-radius: 15px; 
+}
+.form1 {
+    width: 20%;
+    position: absolute;
+    right: 34%;
+    top: 15%;
+    padding: 1%; /* Ajustado para garantir espaço interno adequado */
+    line-height: 10px;
+    background-color: #FF5C00;
+    border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.3);
+    font-size: large;
+}
+#editar {
+    position: absolute;
+    width: 11%;
+    right: 39%;
+    top: 40%;
+    border: 2px solid black; 
+    padding: 10px;
+    border-radius: 15px; 
+}
+#limpar, #consulta{
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    color: #ccc;
+}
+button {
+    background-color: black;
+    color: white;
+    width: 100%; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+@media (max-width: 412px) {
+    .seu-seletor {
+        max-height: 915px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 200vh;
+    }
+
+    fieldset {
+        width: 90%; /* Reduzir a largura do formulário */
+        padding: 15px; /* Reduzir o padding para caber melhor */
+        margin: 10px auto; /* Ajuste a margem */
+        height: 100%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 183%;
+        width: 30%;
+        left: 50%;
+    }
+    
+    #excluir2 {
+        position: absolute;
+        top: 120%;
+        width: 60%;
+        left: 22%;
+        height: 20%;
+    }
+    
+
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 100%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 40%;
+        left: 0;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .id {
+        position: absolute;
+        top: 82%;
+        left: 3%;
+    }
+
+    .comprovante label, .comprovante input {
+        left: 0;
+        width: 110%; /* Tornar o input de comprovante responsivo */
+        text-align: center;
+    }
+
+    .input-date {
+        width: 100%; /* Garantir que o input de data ocupe toda a largura */
+    }
+    .user-list {
+        position: absolute;
+        top: 150%
+    }
+     .excluir {
+        position: absolute;
+        top: 130%;
+        width: 50%;
+        
+     }
+     .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 30%;
+     }
+     .sidebar.minimized {
+        max-height: 45%;
+     }
+     #edita {
+        position: absolute;
+        top: 105%;
+        left: 25%;
+        width: 50%;
+     }
+     #datar input {
+        margin: 1%;
+        width: 25%;
+     }
+}
+
+@media (max-width: 360px) {
+    .seu-seletor {
+        max-height: 740px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 270vh;
+    }
+
+    fieldset {
+        width: 90%; /* Reduzir a largura do formulário */
+        padding: 15px; /* Reduzir o padding para caber melhor */
+        margin: 10px auto; /* Ajuste a margem */
+        height: 100%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 235%;
+        width: 30%;
+        left: -120%;
+    }
+    
+    #excluir2 {
+        position: absolute;
+        top: 161%;
+        width: 60%;
+        left: 22%;
+        height: 25%;
+    }
+    
+
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 140%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna1 {
+        top: -1%;
+        height: 34%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 50%;
+        left: 0;
+        height: 35%;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .id {
+        position: absolute;
+        top: 82%;
+        left: 3%;
+    }
+
+    .comprovante label, .comprovante input {
+        left: 0;
+        width: 110%; /* Tornar o input de comprovante responsivo */
+        text-align: center;
+    }
+
+    .input-date {
+        width: 100%; /* Garantir que o input de data ocupe toda a largura */
+    }
+    .user-list {
+        position: absolute;
+        top: 200%;
+        width: 60%;
+        right: 15%;
+    }
+     .excluir {
+        position: absolute;
+        top: 130%;
+        width: 50%;
+
+        
+     }
+     .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 30%;
+     }
+     .sidebar.minimized {
+        max-height: 50%;
+        max-width: 35%;
+     }
+     #edita {
+        position: absolute;
+        top: 138%;
+        left: 25%;
+        width: 50%;
+
+     }
+     #datar input {
+
+        margin: 1%;
+        width: 25%;
+
+     }
+}
+
+@media (max-width: 414px) {
+    .seu-seletor {
+        max-height: 896px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 200vh;
+    }
+
+    fieldset {
+        width: 90%; /* Reduzir a largura do formulário */
+        padding: 15px; /* Reduzir o padding para caber melhor */
+        margin: 10px auto; /* Ajuste a margem */
+        height: 100%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 183%;
+        width: 30%;
+        left: 50%;
+    }
+    
+    #excluir2 {
+        position: absolute;
+        top: 120%;
+        width: 60%;
+        left: 22%;
+        height: 20%;
+    }
+    
+
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 100%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 40%;
+        left: 0;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .id {
+        position: absolute;
+        top: 81%;
+        left: 3%;
+    }
+
+    .comprovante label, .comprovante input {
+        left: 0;
+        width: 110%; /* Tornar o input de comprovante responsivo */
+        text-align: center;
+    }
+
+    .input-date {
+        width: 100%; /* Garantir que o input de data ocupe toda a largura */
+    }
+    .user-list {
+        position: absolute;
+        top: 150%
+    }
+     .excluir {
+        position: absolute;
+        top: 130%;
+        width: 50%;
+        
+     }
+     .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 30%;
+     }
+     .sidebar.minimized {
+        max-height: 45%;
+     }
+     #edita {
+        position: absolute;
+        top: 105%;
+        left: 25%;
+        width: 50%;
+     }
+     #datar input {
+        margin: 1%;
+        width: 25%;
+     }
+}
+
+@media (max-width: 430px) {
+    .seu-seletor {
+        max-height: 932px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 200vh;
+    }
+
+    fieldset {
+        width: 90%; /* Reduzir a largura do formulário */
+        padding: 15px; /* Reduzir o padding para caber melhor */
+        margin: 10px auto; /* Ajuste a margem */
+        height: 100%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 183%;
+        width: 30%;
+        left: 50%;
+    }
+    
+    #excluir2 {
+        position: absolute;
+        top: 120%;
+        width: 60%;
+        left: 22%;
+        height: 20%;
+    }
+    
+
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 100%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 40%;
+        left: 0;
+        height: 80%;
+
+    }
+    .coluna2 {
+        height: 80%;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .id {
+        position: absolute;
+        top: 89%;
+        left: 3%;
+    }
+
+    .comprovante label, .comprovante input {
+        left: 0;
+        width: 110%; /* Tornar o input de comprovante responsivo */
+        text-align: center;
+    }
+
+    .input-date {
+        width: 100%; /* Garantir que o input de data ocupe toda a largura */
+    }
+    .user-list {
+        position: absolute;
+        top: 150%
+    }
+     .excluir {
+        position: absolute;
+        top: 130%;
+        width: 50%;
+        
+     }
+     .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 30%;
+     }
+     .sidebar.minimized {
+        max-height: 45%;
+     }
+     #edita {
+        position: absolute;
+        top: 105%;
+        left: 25%;
+        width: 50%;
+     }
+     #datar {
+        position: absolute;
+        top: 82%;
+        
+     }
+     #datar input {
+        margin: 1%;
+        width: 25%;
+     }
+}
+
+@media (max-width: 375px) {
+    .seu-seletor {
+        max-height: 667px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 280vh;
+    }
+
+    fieldset {
+        width: 90%; /* Reduzir a largura do formulário */
+        padding: 15px; /* Reduzir o padding para caber melhor */
+        margin: 10px auto; /* Ajuste a margem */
+        height: 100%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 263%;
+        width: 30%;
+        left: 50%;
+    }
+    
+    #excluir2 {
+        position: absolute;
+        top: 180%;
+        width: 60%;
+        left: 22%;
+        height: 25%;
+    }
+    
+
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 150%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 35%;
+        left: 0;
+        height: 80%;
+
+    }
+    .coluna1 {
+        height: 80%;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .id {
+        position: absolute;
+        top: 85%;
+        left: 3%;
+    }
+
+    .comprovante label, .comprovante input {
+        left: 0;
+        width: 110%; /* Tornar o input de comprovante responsivo */
+        text-align: center;
+    }
+
+    .input-date {
+        width: 100%; /* Garantir que o input de data ocupe toda a largura */
+    }
+    .user-list {
+        position: absolute;
+        top: 225%;
+        width: 60%;
+        text-align: center;
+        right: 15%;
+    }
+     .excluir {
+        position: absolute;
+        top: 230%;
+        width: 50%;
+        
+     }
+     .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 35%;
+     }
+     .sidebar.minimized {
+        max-height: 60%;
+     }
+     #edita {
+        position: absolute;
+        top: 150%;
+        left: 25%;
+        width: 50%;
+     }
+     #datar {
+        position: absolute;
+        top: 75%;
+        
+     }
+     #datar input {
+        margin: 1%;
+        width: 25%;
+     }
+     .dados {
+        width: 150%;
+        background-color: #FF5C00;
+     }
+}
+
+@media (max-width: 390px) {
+    .seu-seletor {
+        max-height: 844px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 230vh;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 185%;
+        width: 30%;
+        left: 50%;
+    }
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 115%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 40%;
+        left: 0;
+        height: 80%;
+
+    }
+    .coluna1 {
+        height: 80%;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    #datar {
+        position: absolute;
+        top: 73%;
+    }
+    .id {
+        position: absolute;
+        top: 84%;
+    }
+    #edita {
+        position: absolute;
+        top: 117%;
+        left: 25%;
+        width: 50%;
+    }
+    .user-list {
+        position: absolute;
+        top: 180%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 214%;
+        width: 30%;
+        left: 50%;
+    }
+    #excluir2 {
+        position: absolute;
+        top: 140%;
+        width: 60%;
+        left: 22%;
+        height: 25%;
+    }
+    .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 35%;
+     }
+     .sidebar.minimized {
+        max-height: 50%;
+     }
+
+}
+
+@media (max-width: 344px) {
+    .seu-seletor {
+        max-height: 882px; /* Defina a altura máxima desejada */
+        overflow: auto; /* Adiciona rolagem se o conteúdo exceder a altura */
+    }
+    body {
+        background-size: 1000%; /* Ajuste o fundo para dispositivos menores */
+        background-image: url(teladefundo.jpeg);
+        width: 100vw;
+        height: 230vh;
+        top: -10%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 185%;
+        width: 30%;
+        left: 50%;
+    }
+    .colunas {
+        flex-direction: column; /* Colocar as colunas uma abaixo da outra em dispositivos menores */
+        gap: 10px; /* Diminuir o espaçamento */
+        width: 60%;
+        height: 115%;
+        top: 10%;
+        left: 22%;
+    }
+    .coluna2 {
+        position: relative;
+        top: 38%;
+        left: 0;
+        height: 80%;
+
+    }
+    .coluna1 {
+        height: 80%;
+        top: 2%;
+    }
+    .coluna1 input, .coluna2 input{
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    #datar {
+        position: absolute;
+        top: 77%;
+    }
+    .id {
+        position: absolute;
+        top: 84%;
+        width: 80%;
+    }
+    #edita {
+        position: absolute;
+        top: 117%;
+        left: 25%;
+        width: 50%;
+    }
+    .user-list {
+        position: absolute;
+        top: 180%;
+    }
+    .titulo2 {
+        position: absolute;
+        top: 214%;
+        width: 30%;
+        left: 50%;
+    }
+    #excluir2 {
+        position: absolute;
+        top: 140%;
+        width: 60%;
+        left: 22%;
+        height: 25%;
+    }
+    .sidebar {
+        max-height: 10%;
+        border-radius: 8px;
+        max-width: 35%;
+    }
+    .sidebar.minimized {
+        max-height: 50%;
+    }
+    
+
+
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="consultarabastecimento.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    </head>
+    <div pai-tela>
+    <body>
+        <div class="fundo">
+            
+            <div class="dados">
+                <form method="POST" id="abastecimentoform">
+                    <div class="colunas" >
+                        
+                    <div class="coluna1">
+                        <label for="kilometrageminicial">Kilometragem Inicial</label>
+                        <br>
+                        <input type="text" name="kilometrageminicial" id="kilometrageminicial" required>
+                        <br><br>
+                        <label for="totalabastecido">Total Abastecido(L)</label>
+                        <br>
+                        <input type="text" name="totalabastecido" id="totalabastecido">
+                        <br><br>
+                        <label for="tipocombustivel">Tipo de Combustível</label>
+                        <br>
+                        <input type="text" name="tipocombustivel" id="tipocombustivel">
+                        <br><br>
+                        <label for="cidadepartida">Cidade de Partida</label>
+                        <br>
+                        <input type="text" name="cidadepartida" id="cidadepartida">
+                        <br><br>
+                        <label for="totalgasto">Total Gasto(R$)</label>
+                        <br>
+                        <input type="text" name="totalgasto" id="totalgasto">
+                        <br><br>
+                        <label for="id">ID</label>
+                        <br>
+                        <input id="id" name="id" type="number" readonly>
+                        <br><br>
+                    </div>
+                    <div class="coluna2">
+                        <label for="kilometragem">Kilometragem Final</label>
+                        <br>
+                        <input type="text" name="kilometragemfinal" id="kilometragemfinal">
+                        <br><br>
+                        <label for="posto">Posto</label>
+                        <br>
+                        <input type="text" name="posto" id="posto">
+                        <br><br>
+                        <label for="veiculo">Veículo</label>
+                        <br>
+                        <input type="text" name="veiculo" id="veiculo">
+                        <br><br>
+                        <label for="atual">Cidade Atual</label>
+                        <br>
+                        <input type="text" name="cidadeatual" id="cidadeatual">
+                        <br><br>
+                        <label for="atual">Motorista</label>
+                        <br>
+                        <input type="text" name="motorista" id="motorista">
+                        <br><br>
+                        <label for="atual">Passageiro</label>
+                        <br>
+                        <input type="text" name="passageiro" id="passageiro">
+                        
+                    </div>
+                    <div class="id">
+                        <br><br>
+                        <label for="atual">Comentario</label>
+                        <br>
+                        <input type="text" name="comentario" id="comentario">
+                    </div>
+                    </div>
+                    <div id="datar">
+                        <label for="dia">Dia:</label>
+                        
+                        <input id="dia" name="dia" type="number">
+                        
+                        <label for="mes">Mês:</label>
+                        
+                        <input type="number" id="mes" name="mes">
+                        
+                        <label for="ano">Ano:</label>
+                        
+                        <input type="number" id="ano" name="ano">
+                        
+            
+                    </div>
+                        
+                    </div>
+                    <button type="submit" id="edita">Salva alterações</button>
+                </form>
+            </div>
+                <h3 class="titulo2">Consulta de registros</h3>
+                <div class="user-list">
+                    <h3>Registros</h3>
+                    <ul id="user">
+                     
+                    </ul>
+                    <button type="button" id="limpar">Limpar</button>
+                    <br><br>
+                    <button id="consulta">Consultar Dados</button>
+                    <div id="resultado"></div>
+                </div>
+                <div class="excluir" id="excluir2">
+                    <form id="excluirform" method="post">
+                        <label for="excluirinput">Confirmar ID para excluir:</label>
+                        <br>
+                        <input type="number" name="id" id="excluirinput">
+                        
+                        <button type="submit" id="excluir">Excluir</button>
+                        <br>
+                    </form>
+                    </div>
+                    <div class="sidebar" id="sidebar">
+                        <button class="toggle-btn" id="toggle-btn">☰</button>
+                        <h1 class="menu-title">Menu</h1>
+                        <hr>
+                        <ul class="menu">
+                            <li><a href="registrarusuario.html">Usuários</a></li>
+                            <hr>
+                            <li><a href="registrarveiculo.html">Veículos</a></li>
+                            <hr>
+                            <li><a href="registrarposto.html">Postos</a></li>
+                            <hr>
+                            <li><a href="consultarabastecimento.html">Abastecimento</a></li>
+                            <hr>
+                            <li><a href="login.html">Login</a></li>
+                        </ul>
+                    </div> 
+        <script src="consultarabastecimento.js"></script>
+        <script>
+            document.getElementById('abastecimentoform').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+        
+            let formData = new FormData(this);
+        
+            fetch('editarregistro.php', { 
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); 
+        
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+        </script>
+
+         <script>
+            document.getElementById('excluirform').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+        
+            let formData = new FormData(this);
+        
+            fetch('excluirregistro.php', { 
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); 
+        
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+        </script>
+
+    
+    
+    </div>
+    </body>
+</html>
